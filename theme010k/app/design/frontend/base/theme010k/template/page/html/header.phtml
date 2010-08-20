@@ -1,0 +1,61 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2010 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+<?php echo $this->getChildHtml('ie') ?>
+<div class="header-container">
+    <div class="header">
+        <div class="header_row1">
+        	<div>
+									<?php if ($this->getIsHomePage()):?>
+         <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
+         <?php else:?>
+         <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+         <?php endif?>
+         </div>
+         <?php echo $this->getChildHtml('topSearch') ?>
+         <?php echo $this->getChildHtml('topLinks') ?>
+        </div>
+        <div class="header_row2">
+        	<?php echo $this->getChildHtml('store_language') ?>
+         <div class="home_link"><a href="<?php echo $this->getUrl('') ?>">Home</a></div>
+									<?php echo $this->getChildHtml('topMenu') ?>
+        </div>
+        <?php if (Mage::app()->getRequest()->getRequestString() == "/") { ?>
+        <div class="header_row3">
+        	<a href="<?php echo $this->getUrl('') ?>adjustable-strap.html"><img src="<?php echo $this->getSkinUrl('images/media/banner1.jpg') ?>" alt="" /></a>
+         <a href="<?php echo $this->getUrl('') ?>casual-shoes.html"><img src="<?php echo $this->getSkinUrl('images/media/banner2.jpg') ?>" alt="" /></a>
+         <a href="<?php echo $this->getUrl('') ?>athletic-shoes.html"><img src="<?php echo $this->getSkinUrl('images/media/banner3.jpg') ?>" alt="" /></a>
+         <a href="<?php echo $this->getUrl('') ?>comfort-shoes.html"><img src="<?php echo $this->getSkinUrl('images/media/banner4.jpg') ?>" alt="" /></a>
+         <a href="<?php echo $this->getUrl('') ?>boots.html"><img src="<?php echo $this->getSkinUrl('images/media/banner5.jpg') ?>" alt="" /></a>
+        </div>
+        <?php } ?>
+        <div class="header_row4"><a href="<?php echo $this->getUrl('') ?>comfort-shoes.html"><img src="<?php echo $this->getSkinUrl('images/media/banner_main.jpg') ?>" alt="" /></a></div>
+    </div>
+</div>
+
